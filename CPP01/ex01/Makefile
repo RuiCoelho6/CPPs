@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rpires-c <rpires-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/05/15 12:04:56 by rpires-c          #+#    #+#              #
-#    Updated: 2025/05/15 13:03:45 by rpires-c         ###   ########.fr        #
+#    Created: 2025/05/15 12:04:58 by rpires-c          #+#    #+#              #
+#    Updated: 2025/05/16 15:37:23 by rpires-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = c++
 
 FLAGS = -std=c++98 -Wall -Wextra -Werror
 
-SRC = main.cpp newZombie.cpp, randomChump.cpp Zombie.cpp
+SRC = zombieHorde.cpp Zombie.cpp main.cpp
 
 OBJDIR = Objs
 OBJS = $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRC))

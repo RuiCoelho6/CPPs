@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpires-c <rpires-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/15 12:07:14 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/05/15 17:20:46 by rpires-c         ###   ########.fr       */
+/*   Created: 2025/05/16 15:09:29 by rpires-c          #+#    #+#             */
+/*   Updated: 2025/05/16 15:11:17 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,3 @@ void Zombie::announce(void)
 {
 	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
-
