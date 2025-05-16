@@ -6,11 +6,11 @@
 #    By: rpires-c <rpires-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/15 12:04:56 by rpires-c          #+#    #+#              #
-#    Updated: 2025/05/16 15:06:46 by rpires-c         ###   ########.fr        #
+#    Updated: 2025/05/16 16:08:36 by rpires-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = zombie
+NAME = BraiiiiiiinnnzzzZ
 
 CC = c++
 
