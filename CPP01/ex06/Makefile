@@ -6,11 +6,11 @@
 #    By: rpires-c <rpires-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/15 12:05:01 by rpires-c          #+#    #+#              #
-#    Updated: 2025/05/20 18:13:17 by rpires-c         ###   ########.fr        #
+#    Updated: 2025/05/20 18:17:43 by rpires-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Harl_filter
+NAME = harlFilter
 
 CC = c++
 
