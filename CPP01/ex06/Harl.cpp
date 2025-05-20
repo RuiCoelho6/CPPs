@@ -6,7 +6,7 @@
 /*   By: rpires-c <rpires-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 17:06:21 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/05/20 18:11:28 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/05/20 18:12:31 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ void Harl::complain(std::string level) {
 		if (level == levels[i])
 		{
 			(this->*funcs[i])();
-			return ;
+			if (i < 3)
+				level = levels[i + 1];
 		}
 	}
 
