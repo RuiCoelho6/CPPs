@@ -6,7 +6,7 @@
 #    By: rpires-c <rpires-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/15 12:05:01 by rpires-c          #+#    #+#              #
-#    Updated: 2025/05/16 16:43:29 by rpires-c         ###   ########.fr        #
+#    Updated: 2025/05/20 17:52:54 by rpires-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = c++
 
 FLAGS = -std=c++98 -Wall -Wextra -Werror
 
-SRC = main.cpp
+SRC = main.cpp Harl.cpp
 
 OBJDIR = Objs
 OBJS = $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRC))
