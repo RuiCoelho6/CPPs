@@ -6,7 +6,7 @@
 #    By: rpires-c <rpires-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/15 12:05:01 by rpires-c          #+#    #+#              #
-#    Updated: 2025/05/16 16:43:07 by rpires-c         ###   ########.fr        #
+#    Updated: 2025/05/20 16:52:00 by rpires-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ all: $(NAME)
 
 clean:
 	@$(RM) -r $(NAME)
+	@$(RM) -r *.replace
 	@$(RM) -r $(OBJDIR)
 
 fclean: clean
