@@ -6,7 +6,7 @@
 /*   By: rpires-c <rpires-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 17:05:45 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/05/20 18:47:00 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/05/23 19:36:47 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 std::string	stringToLowerCase(std::string str)
 {
-	for (char &c: str)
-		c = std::toupper(c);
+	for (size_t i = 0 ; i < str.length() ; i++)
+		str[i] = std::toupper(str[i]);
 	return (str);
 }
 
