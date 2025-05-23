@@ -6,7 +6,7 @@
 /*   By: rpires-c <rpires-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 15:09:09 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/05/16 16:04:57 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/05/23 16:13:27 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ int main()
 	Zombie *horde = zombieHorde(N, "bob ");
 	std::cout << "Destroying the zombie array:" << std::endl;
 	delete []horde;
-	std::cout << "\nEnd of main function, stack zombies will be destroyed automatically" << std::endl;
+	std::cout << "\nEnd of function, stack zombies will be destroyed automatically" << std::endl;
 	return (0);
 }

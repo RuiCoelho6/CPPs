@@ -6,7 +6,7 @@
 #    By: rpires-c <rpires-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/15 12:05:01 by rpires-c          #+#    #+#              #
-#    Updated: 2025/05/20 15:15:05 by rpires-c         ###   ########.fr        #
+#    Updated: 2025/05/23 16:00:51 by rpires-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,10 +25,10 @@ $(shell mkdir -p $(OBJDIR))
 
 $(OBJDIR)/%.o: %.cpp
 	@mkdir -p $(OBJDIR)
-	@ $(CC) -c $(FLGS) -o $@ $<
+	@ $(CC) -c $(FLAGS) -o $@ $<
 
 $(NAME): $(OBJS)
-	@$(CC) $(FLGS) $(OBJS) -o $(NAME)
+	@$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 	@echo "╔══════════════════════════╗"
 	@echo "║ ✅ Compiled Successfully!║"
 	@echo "╚══════════════════════════╝"
