@@ -6,7 +6,7 @@
 /*   By: rpires-c <rpires-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 13:32:12 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/05/01 15:43:43 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/05/23 15:38:12 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Contact	create_contact()
 	do
 	{
 		std::cout << "Enter first name: ";
-		std::cin >> input;
+		std::getline(std::cin, input);
 		if (input.empty())
 			std::cout << "This field can't be empty!" << std::endl;
 	} while (input.empty());
@@ -71,7 +71,14 @@ int	main(void)
 	while (true)
 	{
 		std::cout << "Enter operation (ADD, SEARCH or EXIT): ";
-		std::cin >> operation;
+
+		if (!std::getline(std::cin, operation))
+			break ;
+		size_t start = operation.find_first_not_of(" \t\n\r");
+		if (start == std::string::npos)
+			continue ;
+		size_t end = operation.find_last_not_of(" \t\n\r");
+		operation = operation.substr(start, end - start + 1);
 		std::transform(operation.begin(), operation.end(), operation.begin(), ::tolower);
 
 		if (operation == "add")
@@ -88,6 +95,7 @@ int	main(void)
 				phonebook.search_contact();
 				std::cout << "Enter index: ";
 				std::cin >> input;
+				std::cin.ignore();
 				try
 				{
 					int index = 0;
