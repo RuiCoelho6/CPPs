@@ -5,31 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpires-c <rpires-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/20 17:05:45 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/05/28 15:37:03 by rpires-c         ###   ########.fr       */
+/*   Created: 2025/05/28 15:41:28 by rpires-c          #+#    #+#             */
+/*   Updated: 2025/05/28 17:36:45 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include "Fixed.hpp"
 
-std::string	stringToUpperCase(std::string str)
+int main( void )
 {
-	for (size_t i = 0 ; i < str.length() ; i++)
-		str[i] = std::toupper(str[i]);
-	return (str);
-}
+	Fixed	a;
+	Fixed const	b( 10 );
+	Fixed const	c( 42.42f );
+	Fixed const	d( b );
 
-int	main(int ac, char **av)
-{
-	Harl	harl;
-	std::string	input;
+	a = Fixed( 1234.4321f );
 
-	if (ac != 2)
-	{
-		std::cout << "Too many arguments" << std::endl << "Proper format is: " << av[0] << " [level to display]" << std::endl;
-		return (1); 
-	}
-	input = stringToUpperCase(av[1]);
-	harl.complain(input);
+	std::cout << "a is " << a << std::endl;
+	std::cout << "b is " << b << std::endl;
+	std::cout << "c is " << c << std::endl;
+	std::cout << "d is " << d << std::endl;
+	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
+	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
+	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+
 	return (0);
 }

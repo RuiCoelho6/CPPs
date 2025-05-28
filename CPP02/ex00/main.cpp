@@ -5,31 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpires-c <rpires-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/20 17:05:45 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/05/28 15:37:03 by rpires-c         ###   ########.fr       */
+/*   Created: 2025/05/28 15:41:28 by rpires-c          #+#    #+#             */
+/*   Updated: 2025/05/28 16:27:25 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include "Fixed.hpp"
 
-std::string	stringToUpperCase(std::string str)
+int main( void )
 {
-	for (size_t i = 0 ; i < str.length() ; i++)
-		str[i] = std::toupper(str[i]);
-	return (str);
-}
+	Fixed a;
+	Fixed b( a );
+	Fixed c;
 
-int	main(int ac, char **av)
-{
-	Harl	harl;
-	std::string	input;
+	c = b;
 
-	if (ac != 2)
-	{
-		std::cout << "Too many arguments" << std::endl << "Proper format is: " << av[0] << " [level to display]" << std::endl;
-		return (1); 
-	}
-	input = stringToUpperCase(av[1]);
-	harl.complain(input);
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
+
 	return (0);
 }
