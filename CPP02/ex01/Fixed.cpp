@@ -72,6 +72,6 @@ void	Fixed::setRawBits(int const raw)
 
 std::ostream	&operator<<(std::ostream& os, const Fixed& fixed)
 {
-	
+	os << fixed.float();
 	return (os);
 }
