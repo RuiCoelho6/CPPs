@@ -37,7 +37,6 @@ all: $(NAME)
 
 clean:
 	@$(RM) -r $(NAME)
-	@$(RM) -r *.replace
 	@$(RM) -r $(OBJDIR)
 
 fclean: clean
