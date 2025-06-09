@@ -6,7 +6,7 @@
 /*   By: rpires-c <rpires-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 15:41:35 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/05/28 15:41:36 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/06/09 10:40:41 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ const int	Fixed::_fractionalBits = 8;
 
 // Constructors
 
-Fixed::Fixed()
+Fixed::Fixed(): _rawBits(0)
 {
 	std::cout << "Default constructor called" << std::endl;
 }
@@ -37,12 +37,6 @@ Fixed::Fixed(const Fixed &other)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	this->_rawBits = other._rawBits;
-}
-
-Fixed::Fixed(const Fixed &other)
-{
-	std::cout << "Copy constructor called" << std::endl;
-	*this = other;
 }
 
 // Destructor
@@ -98,11 +92,6 @@ bool	Fixed::operator>(const Fixed &other) const
 	return (this->_rawBits > other._rawBits);
 }
 
-bool	Fixed::operator<(const Fixed &other) const
-{
-	return (this->_rawBits < other._rawBits);
-}
-
 bool	Fixed::operator<=(const Fixed &other) const
 {
 	return (this->_rawBits <= other._rawBits);
@@ -145,7 +134,7 @@ Fixed	Fixed::operator*(const Fixed& other) const
 {
 	Fixed	result;
 
-	result._rawBits = this->_rawBits * other._rawBits;
+	result._rawBits = (this->_rawBits * other._rawBits) >> 8;
 	return (result);
 }
 
@@ -161,7 +150,7 @@ Fixed	Fixed::operator/(const Fixed& other) const
 
 Fixed	&Fixed::operator++()
 {
-	this->_rawBits++;
+	this->_rawBits ++;
 	return (*this);
 }
 
