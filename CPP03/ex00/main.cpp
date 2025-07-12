@@ -5,7 +5,7 @@ int main()
 	std::cout << "=== ClapTrap Tests ===" << std::endl;
 	
 	// Test 1: Basic functionality
-	std::cout << "\n--- Test 1: Basic Construction and Destruction ---" << std::endl;
+	std::cout << "\n--- Test 1: Basic Construction ---" << std::endl;
 	ClapTrap clap1("Clappy");
 	
 	// Test 2: Attack functionality
@@ -64,7 +64,7 @@ int main()
 	ClapTrap defaultClap;
 	defaultClap.attack("TestTarget");
 	
-	std::cout << "\n=== End of Tests ===" << std::endl;
+	std::cout << "\n--- Test 9: Destruction ---" << std::endl;
 	
 	return 0;
 }
