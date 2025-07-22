@@ -8,7 +8,7 @@ int main()
 	std::cout << "\n--- Test 1: DiamondTrap Construction ---" << std::endl;
 	DiamondTrap diamond1("Diamond1");
 	// Explicitly qualify getHitPoints and getEnergyPoints
-	std::cout << "DiamondTrap HP: " << diamond1.FragTrap::getHitPoints() << ", EP: " << diamond1.ScavTrap::getEnergyPoints() << std::endl;
+	std::cout << "DiamondTrap HP: " << diamond1.getHitPoints() << ", EP: " << diamond1.getEnergyPoints() << std::endl;
 	
 	// Test 2: DiamondTrap whoAmI function
 	std::cout << "\n--- Test 2: DiamondTrap whoAmI ---" << std::endl;
@@ -27,13 +27,13 @@ int main()
 	std::cout << "\n--- Test 5: DiamondTrap Stats Verification ---" << std::endl;
 	std::cout << "Expected: HP=100 (FragTrap), EP=50 (ScavTrap), Attack=30 (FragTrap)" << std::endl;
 	// Explicitly qualify getHitPoints and getEnergyPoints
-	std::cout << "Actual: HP=" << diamond1.FragTrap::getHitPoints() << ", EP=" << diamond1.ScavTrap::getEnergyPoints() << std::endl;
+	std::cout << "Actual: HP=" << diamond1.getHitPoints() << ", EP=" << diamond1.getEnergyPoints() << std::endl;
 	
 	// Test 6: DiamondTrap damage and repair
 	std::cout << "\n--- Test 6: DiamondTrap Damage and Repair ---" << std::endl;
 	// Explicitly qualify takeDamage and beRepaired
-	diamond1.FragTrap::takeDamage(30);
-	diamond1.FragTrap::beRepaired(15);
+	diamond1.takeDamage(30);
+	diamond1.beRepaired(15);
 	diamond1.whoAmI();
 	
 	// Test 7: DiamondTrap copy constructor
@@ -59,7 +59,7 @@ int main()
 	DiamondTrap diamond5("Defender");
 	
 	diamond4.attack("Defender"); // This should now correctly call DiamondTrap's own attack
-	diamond5.FragTrap::takeDamage(30); // Explicitly qualify takeDamage
+	diamond5.takeDamage(30); // Explicitly qualify takeDamage
 	diamond5.whoAmI();
 	diamond4.highFivesGuys();
 	diamond5.guardGate();
@@ -74,7 +74,7 @@ int main()
 		if (i % 2 == 0)
 			diamond6.attack("Target"); // This should now correctly call DiamondTrap's own attack
 		else
-			diamond6.FragTrap::beRepaired(1); // Explicitly qualify beRepaired
+			diamond6.beRepaired(1); // Explicitly qualify beRepaired
 		if (i % 10 == 0)
 			std::cout << "EP remaining: " << diamond6.ScavTrap::getEnergyPoints() << std::endl; // Explicitly qualify getEnergyPoints
 	}
@@ -82,10 +82,10 @@ int main()
 	// Test 12: DiamondTrap survival test
 	std::cout << "\n--- Test 12: DiamondTrap Survival Test ---" << std::endl;
 	DiamondTrap diamond7("Survivor");
-	diamond7.FragTrap::takeDamage(50); // Explicitly qualify takeDamage
+	diamond7.takeDamage(50); // Explicitly qualify takeDamage
 	diamond7.attack("StillAlive"); // This should now correctly call DiamondTrap's own attack
 	diamond7.whoAmI();
-	diamond7.FragTrap::takeDamage(60); // Should die, explicitly qualify takeDamage
+	diamond7.takeDamage(60); // Should die, explicitly qualify takeDamage
 	diamond7.attack("ShouldFail"); // This should now correctly call DiamondTrap's own attack
 	diamond7.whoAmI(); // Should still work?
 	
@@ -113,8 +113,8 @@ int main()
 	finalDiamond.attack("FinalEnemy"); // This should now correctly call DiamondTrap's own attack
 	finalDiamond.highFivesGuys();
 	finalDiamond.guardGate();
-	finalDiamond.FragTrap::takeDamage(25); // Explicitly qualify takeDamage
-	finalDiamond.FragTrap::beRepaired(10); // Explicitly qualify beRepaired
+	finalDiamond.takeDamage(25); // Explicitly qualify takeDamage
+	finalDiamond.beRepaired(10); // Explicitly qualify beRepaired
 	finalDiamond.whoAmI();
 	
 	std::cout << "\n=== End of DiamondTrap Tests ===" << std::endl;
