@@ -90,3 +90,8 @@ int	ClapTrap::getEnergyPoints(void) const
 {
 	return (this->energy_points);
 }
+
+int	ClapTrap::getAttackDamage(void) const
+{
+	return (this->attack_damage);
+}

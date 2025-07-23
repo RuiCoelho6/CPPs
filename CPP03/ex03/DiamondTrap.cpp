@@ -1,29 +1,38 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(): ClapTrap("Default DiamondTrap_clap_name"), FragTrap(), ScavTrap(), name("Default DiamondTrap")
+DiamondTrap::DiamondTrap(): ClapTrap(), FragTrap(), ScavTrap(), name("Default DiamondTrap")
 {
-	this->hit_points = FragTrap::hit_points; // Should be 100
-	this->energy_points = ScavTrap::energy_points; // Should be 50
-	std::cout << "Diamond " << std::endl;
-	this->attack_damage = FragTrap::attack_damage; // Should be 30
+	ScavTrap	scav_temp;
+	FragTrap	frag_temp;
+
+	this->name = name;
+	this->hit_points = frag_temp.getHitPoints();
+	this->energy_points = scav_temp.getEnergyPoints();
+	this->attack_damage = frag_temp.getAttackDamage();
 	std::cout << "Default DiamondTrap constructor" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "_clap_name"), FragTrap(name + "_Clap_name"), ScavTrap(name + "_Clap_name"), name(name)
 {
+	ScavTrap	scav_temp;
+	FragTrap	frag_temp;
+
 	this->name = name;
-	this->hit_points = FragTrap::hit_points; // Should be 100
-	this->energy_points = ScavTrap::energy_points; // Should be 50
-	this->attack_damage = FragTrap::attack_damage; // Should be 30
+	this->hit_points = frag_temp.getHitPoints();
+	this->energy_points = scav_temp.getEnergyPoints();
+	this->attack_damage = frag_temp.getAttackDamage();
 	std::cout << "DiamondTrap " << this->name << " was created" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &other): ClapTrap(other.name + "_Clap_name"), FragTrap(other.name + "_Clap_name"), ScavTrap(other.name + "_Clap_name"), name(other.name)
 {
+	ScavTrap	scav_temp;
+	FragTrap	frag_temp;
+
 	this->name = name;
-	this->hit_points = FragTrap::hit_points;
-	this->energy_points = ScavTrap::energy_points;
-	this->attack_damage = FragTrap::attack_damage;
+	this->hit_points = frag_temp.getHitPoints();
+	this->energy_points = scav_temp.getEnergyPoints();
+	this->attack_damage = frag_temp.getAttackDamage();
 	std::cout << "Copy constructor called for DiamondTrap " << this->name << std::endl;
 }
 
