@@ -6,7 +6,7 @@
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 18:25:17 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/07/29 18:28:30 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/07/29 18:45:35 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class WrongAnimal
 		WrongAnimal(std::string type);
 		WrongAnimal(const WrongAnimal &src);
 		WrongAnimal &operator=(const WrongAnimal &rhs);
+		virtual ~WrongAnimal();
 
 		std::string	getType() const;
 		virtual void	makeSound() const;
