@@ -6,11 +6,11 @@
 #    By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/29 15:10:35 by rpires-c          #+#    #+#              #
-#    Updated: 2025/07/29 16:00:56 by rpires-c         ###   ########.fr        #
+#    Updated: 2025/07/29 18:24:11 by rpires-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Polymorphism
+NAME = Brain
 
 CC = c++
 
@@ -25,7 +25,7 @@ $(shell mkdir -p $(OBJDIR))
 
 $(OBJDIR)/%.o: %.cpp
 	@mkdir -p $(OBJDIR)
-	@ $(CC) -c $(FLAGS) -o $@ $<
+	@$(CC) -c $(FLAGS) -o $@ $<
 
 $(NAME): $(OBJS)
 	@$(CC) $(FLAGS) $(OBJS) -o $(NAME)
