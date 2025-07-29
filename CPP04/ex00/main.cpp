@@ -6,7 +6,7 @@
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 15:06:38 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/07/29 18:43:31 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/07/29 19:09:14 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
-int main()
+int	main()
 {
 	std::cout << "\n----- Testing Animal and Dog/Cat Constructors -----\n" << std::endl;
 
