@@ -6,18 +6,18 @@
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 15:10:46 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/07/29 16:03:53 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/07/29 18:34:17 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal() : type("Default_animal")
+Animal::Animal(): type("Default_animal")
 {
 	std::cout << "Animal default constructor called" << std::endl;
 }
 
-Animal::Animal(std::string type) : type(type)
+Animal::Animal(std::string type): type(type)
 {
 	std::cout << "Animal parameterized constructor called with type: " << type << std::endl;
 }

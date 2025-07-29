@@ -6,13 +6,13 @@
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 18:30:00 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/07/29 18:30:19 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/07/29 18:34:25 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat() : Animal()
+WrongCat::WrongCat(): Animal()
 {
 	this->type = "WrongCat";
 	std::cout << "WrongCat default constructor called" << std::endl;

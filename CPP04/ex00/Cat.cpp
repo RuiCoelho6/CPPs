@@ -6,13 +6,13 @@
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 15:29:39 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/07/29 16:03:35 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/07/29 18:33:52 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal()
+Cat::Cat(): Animal()
 {
 	this->type = "Cat";
 	std::cout << "Cat default constructor called" << std::endl;

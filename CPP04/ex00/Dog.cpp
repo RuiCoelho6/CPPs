@@ -6,13 +6,13 @@
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 15:24:49 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/07/29 15:57:23 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/07/29 18:33:42 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal()
+Dog::Dog(): Animal()
 {
 	this->type = "Dog";
 	std::cout << "Dog default constructor called" << std::endl;

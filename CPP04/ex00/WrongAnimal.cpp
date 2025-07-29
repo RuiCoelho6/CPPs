@@ -6,18 +6,18 @@
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 18:28:50 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/07/29 18:29:16 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/07/29 18:34:13 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal() : type("Default_WrongAnimal")
+WrongAnimal::WrongAnimal(): type("Default_WrongAnimal")
 {
 	std::cout << "WrongAnimal default constructor called" << std::endl;
 }
 
-WrongAnimal::WrongAnimal(std::string type) : type(type)
+WrongAnimal::WrongAnimal(std::string type): type(type)
 {
 	std::cout << "WrongAnimal parameterized constructor called with type: " << type << std::endl;
 }
