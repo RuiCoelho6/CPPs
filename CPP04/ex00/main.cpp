@@ -6,7 +6,7 @@
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 15:06:38 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/07/29 19:09:14 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/07/30 14:26:12 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	main()
 	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
+
 	std::cout << "\nCopy constructors:" << std::endl;
 	Dog dog1;
 	Dog dog2(dog1);
@@ -46,8 +47,8 @@ int	main()
 	std::cout << "\n----- Testing WrongAnimal and WrongCat Constructors -----\n" << std::endl;
 
 	std::cout << "Default constructors:" << std::endl;
-	const WrongAnimal* wrong_meta = new WrongAnimal();
-	const WrongAnimal* wrong_cat = new WrongCat();
+	WrongAnimal wrong_meta("WrongAnimal");
+	WrongCat wrong_cat;
 
 	std::cout << "\nCopy constructors:" << std::endl;
 	WrongCat wcat1;
@@ -58,17 +59,15 @@ int	main()
 	wcat3 = wcat1;
 
 	std::cout << "\nTesting functionality:" << std::endl;
-	std::cout << wrong_meta->getType() << " " << std::endl;
-	std::cout << wrong_cat->getType() << " " << std::endl;
-	wrong_meta->makeSound();
-	wrong_cat->makeSound();
+	std::cout << wrong_meta.getType() << " " << std::endl;
+	std::cout << wrong_cat.getType() << " " << std::endl;
+	wrong_meta.makeSound();
+	wrong_cat.makeSound();
 
 	std::cout << "\n----- Cleaning up -----\n" << std::endl;
 	delete meta;
 	delete j;
 	delete i;
-	delete wrong_meta;
-	delete wrong_cat;
 
 	return (0);
 }
