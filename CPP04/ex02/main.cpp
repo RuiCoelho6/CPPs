@@ -6,7 +6,7 @@
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 15:06:38 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/07/30 13:54:18 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/07/30 14:07:14 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 int	main()
 {
+	// Animal test;
 	std::cout << "\n----- Creating Animal Array -----\n" << std::endl;
 	const int arraySize = 4;
 	Animal* animals[arraySize];
