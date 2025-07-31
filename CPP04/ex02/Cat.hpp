@@ -6,7 +6,7 @@
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 15:29:46 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/07/29 19:00:59 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/07/31 11:03:38 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Cat : public Animal
 {
 	private:
-		Brain *brain;
+		Brain	*brain;
 	public:
 		Cat();
 		Cat(const Cat &other);
@@ -27,6 +27,7 @@ class Cat : public Animal
 		~Cat();
 
 		void	makeSound() const;
+		// void	showIdeas() const;
 };
 
 #endif

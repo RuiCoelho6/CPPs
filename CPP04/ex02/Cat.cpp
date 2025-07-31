@@ -6,7 +6,7 @@
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 15:29:39 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/07/29 19:06:11 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/07/31 11:03:05 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,3 +46,9 @@ void	Cat::makeSound() const
 {
 	std::cout << "Meow! Meow!" << std::endl;
 }
+
+/* void	Cat::showIdeas() const
+{
+	for (int i = 0; i < 100; i++)
+		std::cout << "Animal: " << this->type << " | Idea " << i << ": " << brain->getIdea(i) << std::endl;
+} */

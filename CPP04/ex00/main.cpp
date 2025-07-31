@@ -6,7 +6,7 @@
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 15:06:38 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/07/30 14:26:12 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/07/31 10:27:02 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,10 @@ int	main()
 	std::cout << "Default constructors:" << std::endl;
 	WrongAnimal wrong_meta("WrongAnimal");
 	WrongCat wrong_cat;
-
+	
+	/* WrongCat* ClassPointer = new WrongCat();
+	delete ClassPointer; */
+	
 	std::cout << "\nCopy constructors:" << std::endl;
 	WrongCat wcat1;
 	WrongCat wcat2(wcat1);

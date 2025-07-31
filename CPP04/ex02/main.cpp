@@ -6,7 +6,7 @@
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 15:06:38 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/07/30 14:07:14 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/07/31 11:02:53 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,16 @@ int	main()
 		else
 			animals[i] = new Cat();
 	}
+
+	/* std::cout << "\n----- Testing Animal Thoughts -----\n" << std::endl;
+	for (int i = 0; i < arraySize; i++)
+	{
+		std::cout << animals[i]->getType() << " thoughts:" << std::endl;
+		if (animals[i]->getType() == "Dog")
+			static_cast<Dog*>(animals[i])->showIdeas();
+		else if (animals[i]->getType() == "Cat")
+			static_cast<Cat*>(animals[i])->showIdeas();
+	} */
 
 	std::cout << "\n----- Testing Deep Copy -----\n" << std::endl;
 	Dog originalDog;

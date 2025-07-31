@@ -6,7 +6,7 @@
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 15:24:39 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/07/29 19:01:04 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/07/31 11:03:10 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class Dog : public Animal
 		~Dog();
 
 		void	makeSound() const;
+		// void	showIdeas() const;
 };
 
 #endif

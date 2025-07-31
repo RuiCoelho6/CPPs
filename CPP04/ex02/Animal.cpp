@@ -6,7 +6,7 @@
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 15:10:46 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/07/29 18:34:17 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/07/31 10:52:48 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,3 +51,5 @@ void	Animal::makeSound() const
 {
 	std::cout << "* Generic animal sound *" << std::endl;
 }
+
+
