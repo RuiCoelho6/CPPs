@@ -57,7 +57,7 @@ void	testGradeModification()
 		worker.decrementGrade();
 		std::cout << "After another decrement: " << worker << std::endl;
 	}
-	catch (std::exception& e)
+	catch (std::exception &e)
 	{
 		std::cout << "Caught exception: " << e.what() << std::endl;
 	}
@@ -74,7 +74,7 @@ void	testGradeBoundaries()
 		topBureaucrat.incrementGrade();
 		std::cout << "After increment: " << topBureaucrat << std::endl;
 	}
-	catch (std::exception& e)
+	catch (std::exception &e)
 	{
 		std::cout << "Caught exception when incrementing grade 1: " << e.what() << std::endl;
 	}
@@ -85,7 +85,7 @@ void	testGradeBoundaries()
 		bottomBureaucrat.decrementGrade();
 		std::cout << "After decrement: " << bottomBureaucrat << std::endl;
 	}
-	catch (std::exception& e)
+	catch (std::exception &e)
 	{
 		std::cout << "Caught exception when decrementing grade 150: " << e.what() << std::endl;
 	}
@@ -110,7 +110,7 @@ void	testCopyConstructorAndAssignment()
 		std::cout << "Copy after original increment: " << copy << std::endl;
 		std::cout << "Assigned after original increment: " << assigned << std::endl;
 	}
-	catch (std::exception& e)
+	catch (std::exception &e)
 	{
 		std::cout << "Caught exception: " << e.what() << std::endl;
 	}
@@ -119,13 +119,10 @@ void	testCopyConstructorAndAssignment()
 
 int	main()
 {
-	std::cout << "Welcome to the Bureaucratic Nightmare!" << std::endl;
-	std::cout << "======================================" << std::endl << std::endl;
 	testValidBureaucrats();
 	testInvalidBureaucrats();
 	testGradeModification();
 	testGradeBoundaries();
 	testCopyConstructorAndAssignment();
-	std::cout << "Tests completed!" << std::endl;
 	return (0);
 }
