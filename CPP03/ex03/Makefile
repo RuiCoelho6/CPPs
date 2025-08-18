@@ -5,7 +5,6 @@ CC = c++
 FLAGS = -std=c++98 -Wall -Wextra -Werror
 
 SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
-HEADERS = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
 
 OBJDIR = Objs
 OBJS = $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRC))
@@ -25,12 +24,12 @@ endif
 
 $(shell $(SHELL_MKDIR))
 
-$(OBJDIR)/%.o: %.cpp $(HEADERS)
+$(OBJDIR)/%.o: %.cpp
 	@$(MKDIR)
-	$(CC) -c $(FLAGS) -o $@ $<
+	@$(CC) -c $(FLAGS) -o $@ $<
 
 $(NAME): $(OBJS)
-	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+	@$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 	@echo "╔══════════════════════════╗"
 	@echo "║ ✅ Compiled Successfully!║"
 	@echo "╚══════════════════════════╝"
@@ -41,6 +40,7 @@ clean:
 ifeq ($(OS),Windows_NT)
 	@if exist $(OBJDIR) $(RMDIR) $(OBJDIR)
 else
+	@$(RM) $(NAME)
 	@$(RMDIR) $(OBJDIR)
 endif
 

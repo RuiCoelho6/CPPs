@@ -11,15 +11,15 @@ OBJS = $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRC))
 
 # Detect OS for cross-platform compatibility
 ifeq ($(OS),Windows_NT)
-    RM = del /Q
-    RMDIR = rmdir /S /Q
-    MKDIR = if not exist $(OBJDIR) mkdir $(OBJDIR)
-    SHELL_MKDIR = if not exist $(OBJDIR) mkdir $(OBJDIR)
+	RM = del /Q
+	RMDIR = rmdir /S /Q
+	MKDIR = if not exist $(OBJDIR) mkdir $(OBJDIR)
+	SHELL_MKDIR = if not exist $(OBJDIR) mkdir $(OBJDIR)
 else
-    RM = rm -f
-    RMDIR = rm -rf
-    MKDIR = mkdir -p $(OBJDIR)
-    SHELL_MKDIR = mkdir -p $(OBJDIR)
+	RM = rm -f
+	RMDIR = rm -rf
+	MKDIR = mkdir -p $(OBJDIR)
+	SHELL_MKDIR = mkdir -p $(OBJDIR)
 endif
 
 $(shell $(SHELL_MKDIR))

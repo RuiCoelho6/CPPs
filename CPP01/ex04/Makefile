@@ -21,11 +21,24 @@ SRC = main.cpp
 OBJDIR = Objs
 OBJS = $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRC))
 
-$(shell mkdir -p $(OBJDIR))
+# Detect OS for cross-platform compatibility
+ifeq ($(OS),Windows_NT)
+	RM = del /Q
+	RMDIR = rmdir /S /Q
+	MKDIR = if not exist $(OBJDIR) mkdir $(OBJDIR)
+	SHELL_MKDIR = if not exist $(OBJDIR) mkdir $(OBJDIR)
+else
+	RM = rm -f
+	RMDIR = rm -rf
+	MKDIR = mkdir -p $(OBJDIR)
+	SHELL_MKDIR = mkdir -p $(OBJDIR)
+endif
+
+$(shell $(SHELL_MKDIR))
 
 $(OBJDIR)/%.o: %.cpp
-	@mkdir -p $(OBJDIR)
-	@ $(CC) -c $(FLAGS) -o $@ $<
+	@$(MKDIR)
+	@$(CC) -c $(FLAGS) -o $@ $<
 
 $(NAME): $(OBJS)
 	@$(CC) $(FLAGS) $(OBJS) -o $(NAME)
@@ -36,11 +49,19 @@ $(NAME): $(OBJS)
 all: $(NAME)
 
 clean:
-	@$(RM) -r $(NAME)
-	@$(RM) -r *.replace
-	@$(RM) -r $(OBJDIR)
+ifeq ($(OS),Windows_NT)
+	@if exist $(OBJDIR) $(RMDIR) $(OBJDIR)
+else
+	@$(RM) $(NAME)
+	@$(RMDIR) $(OBJDIR)
+endif
 
 fclean: clean
+ifeq ($(OS),Windows_NT)
+	@if exist $(NAME).exe $(RM) $(NAME).exe
+else
+	@$(RM) $(NAME)
+endif
 
 re: fclean all
 
