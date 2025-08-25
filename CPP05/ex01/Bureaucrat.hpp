@@ -5,7 +5,7 @@
 #include <iostream>
 #include <exception>
 
-class Form; // Forward declaration
+class Form;
 
 class Bureaucrat
 {
@@ -14,21 +14,21 @@ class Bureaucrat
 		int					_grade;
 		static const int	HIGHEST_GRADE;
 		static const int	LOWEST_GRADE;
-		void	validateGrade(int grade) const;
+		void	validate_grade(int grade) const;
 
 	public:
 		Bureaucrat();
-		Bureaucrat(const std::string& name, int grade);
-		Bureaucrat(const Bureaucrat& other);
-		Bureaucrat	&operator=(const Bureaucrat& other);
+		Bureaucrat(const std::string &name, int grade);
+		Bureaucrat(const Bureaucrat &other);
+		Bureaucrat	&operator=(const Bureaucrat &other);
 		~Bureaucrat();
 
-		const std::string&	getName() const;
-		int					getGrade() const;
+		const std::string&	get_name() const;
+		int					get_grade() const;
 
-		void	incrementGrade();
-		void	decrementGrade();
-		void	signForm(Form& form);
+		void	increment_grade();
+		void	decrement_grade();
+		void	sign_form(Form& form);
 
 		// Exception classes
 		class GradeTooHighException : public std::exception
@@ -43,6 +43,6 @@ class Bureaucrat
 		};
 };
 
-std::ostream& operator<<(std::ostream& out, const Bureaucrat& bureaucrat);
+std::ostream	&operator<<(std::ostream &out, const Bureaucrat &bureaucrat);
 
 #endif
