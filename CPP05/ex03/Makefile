@@ -1,10 +1,16 @@
-NAME = Intern
+NAME = More_forms
 
 CC = c++
 
 FLAGS = -std=c++98 -Wall -Wextra -Werror
 
-SRC = main.cpp Bureaucrat.cpp
+SRC = main.cpp \
+	Bureaucrat.cpp \
+	AForm.cpp \
+	ShrubberyCreationForm.cpp \
+	RobotomyRequestForm.cpp \
+	PresidentialPardonForm.cpp \
+	Intern.cpp
 
 OBJDIR = Objs
 OBJS = $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRC))
