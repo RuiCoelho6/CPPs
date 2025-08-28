@@ -8,18 +8,18 @@ Bureaucrat::Bureaucrat() : _name("Default_Bureaucrat"), _grade(LOWEST_GRADE)
 	std::cout << "Bureaucrat default constructor called" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const std::string& name, int grade) : _name(name), _grade(grade)
+Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name), _grade(grade)
 {
 	std::cout << "Bureaucrat parameterized constructor called with grade: " << grade << std::endl;
 	validateGrade(grade);
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& other) : _name(other._name), _grade(other._grade)
+Bureaucrat::Bureaucrat(const Bureaucrat &other) : _name(other._name), _grade(other._grade)
 {
 	std::cout << "Bureaucrat copy constructor called" << std::endl;
 }
 
-Bureaucrat	&Bureaucrat::operator=(const Bureaucrat& other)
+Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &other)
 {
 	std::cout << "Bureaucrat assignment operator called" << std::endl;
 	if (this != &other)

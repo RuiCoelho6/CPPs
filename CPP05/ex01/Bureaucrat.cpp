@@ -76,7 +76,7 @@ void	Bureaucrat::validate_grade(int grade) const
 		throw GradeTooLowException();
 }
 
-const char* Bureaucrat::GradeTooHighException::what() const throw()
+const char	*Bureaucrat::GradeTooHighException::what() const throw()
 {
 	return ("Grade is too high! (minimum grade is 1)");
 }

@@ -20,9 +20,9 @@ class Form
 
 	public:
 		Form();
-		Form(const std::string& name, int gradeToSign, int gradeToExecute);
-		Form(const Form& other);
-		Form	&operator=(const Form& other);
+		Form(const std::string &name, int gradeToSign, int gradeToExecute);
+		Form(const Form &other);
+		Form	&operator=(const Form &other);
 		~Form();
 
 		const std::string&	get_name() const;
@@ -45,6 +45,6 @@ class Form
 		};
 };
 
-std::ostream	&operator<<(std::ostream& out, const Form& form);
+std::ostream	&operator<<(std::ostream &out, const Form &form);
 
 #endif
