@@ -1,28 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   iter.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/16 14:57:31 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/09/16 14:57:32 by rpires-c         ###   ########.fr       */
+/*   Created: 2025/09/16 15:02:04 by rpires-c          #+#    #+#             */
+/*   Updated: 2025/09/16 15:02:05 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Serialize.hpp"
-
-int	main(void)
-{
-	Data	d = {123};
-
-	// Serialize the pointer
-	uintptr_t	raw = Serialize::serialize(&d);
-	std::cout << "Serialized value: " << raw << "\n";
-
-	// Deserialize back into a pointer
-	Data*	p = Serialize::deserialize(raw);
-	std::cout << "Deserialized pointer value: " << p->num << "\n";
-
-	return (0);
-}

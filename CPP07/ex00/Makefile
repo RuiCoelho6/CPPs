@@ -5,18 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/09/16 14:57:54 by rpires-c          #+#    #+#              #
-#    Updated: 2025/09/16 14:57:55 by rpires-c         ###   ########.fr        #
+#    Created: 2025/09/16 14:57:21 by rpires-c          #+#    #+#              #
+#    Updated: 2025/09/16 15:00:28 by rpires-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = identify
+NAME = comparison
 
 CC = c++
 
 FLAGS = -std=c++98 -Wall -Wextra -Werror
 
-SRC = main.cpp Base.cpp
+SRC = main.cpp ScalarConverter.cpp
 
 OBJDIR = Objs
 OBJS = $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRC))
