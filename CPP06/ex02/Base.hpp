@@ -24,7 +24,6 @@ class C : public Base
 {
 };
 
-// Function prototypes
 Base*	generate(void);
 void	identify(Base* p);
 void	identify(Base& p);

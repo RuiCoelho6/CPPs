@@ -2,6 +2,7 @@
 
 Base::~Base()
 {
+	std::cout << "Base destructor" << std::endl;
 }
 
 Base*	generate(void)
@@ -35,7 +36,7 @@ void	identify(Base* p)
 	if (!p)
 	{
 		std::cout << "Null pointer!" << std::endl;
-		return;
+		return ;
 	}
 
 	if (dynamic_cast<A*>(p))
@@ -74,7 +75,7 @@ void	identify(Base& p)
 	{
 		// Continue if not a B
 	}
-	
+
 	try
 	{
 		C	&c = dynamic_cast<C&>(p);
