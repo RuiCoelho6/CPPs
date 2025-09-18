@@ -11,7 +11,7 @@ Bureaucrat::Bureaucrat() : _name("Default_Bureaucrat"), _grade(LOWEST_GRADE)
 
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name), _grade(grade)
 {
-	std::cout << "Bureaucrat parameterized constructor called with grade: " << grade << std::endl;
+	std::cout << "Bureaucrat parameterized constructor" << std::endl;
 	validate_grade(grade);
 }
 

@@ -106,9 +106,9 @@ void	testCopyConstructorAndAssignment()
 		assigned = original;
 		std::cout << "After assignment: " << assigned << std::endl;
 		original.incrementGrade();
-		std::cout << "Original after increment: " << original << std::endl;
-		std::cout << "Copy after original increment: " << copy << std::endl;
-		std::cout << "Assigned after original increment: " << assigned << std::endl;
+		std::cout << original << std::endl;
+		std::cout << copy << std::endl;
+		std::cout << assigned << std::endl;
 	}
 	catch (std::exception &e)
 	{

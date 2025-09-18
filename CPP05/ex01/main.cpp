@@ -60,12 +60,12 @@ void	test_form_signing()
 	{
 		Form	importantForm("Important Document", 25, 10);
 		std::cout << "Before signing: " << importantForm << std::endl;
-		
+
 		Bureaucrat	highRankBureaucrat("Alice", 20);
 		std::cout << "High rank bureaucrat: " << highRankBureaucrat << std::endl;
 		highRankBureaucrat.sign_form(importantForm);
 		std::cout << "After signing: " << importantForm << std::endl;
-		
+
 		// Try to sign again
 		highRankBureaucrat.sign_form(importantForm);
 	}
@@ -83,13 +83,12 @@ void	test_form_signing_failure()
 	{
 		Form	restrictedForm("Top Secret Document", 5, 1);
 		std::cout << "Restricted form: " << restrictedForm << std::endl;
-		
+
 		Bureaucrat	lowRankBureaucrat("Bob", 50);
 		std::cout << "Low rank bureaucrat: " << lowRankBureaucrat << std::endl;
 		lowRankBureaucrat.sign_form(restrictedForm);
 		std::cout << "After attempt: " << restrictedForm << std::endl;
-		
-		// Now try with someone who can sign it
+
 		Bureaucrat	highRankBureaucrat("Charlie", 3);
 		std::cout << "High rank bureaucrat: " << highRankBureaucrat << std::endl;
 		highRankBureaucrat.sign_form(restrictedForm);
@@ -109,15 +108,15 @@ void	test_boundary_grades()
 	{
 		Form	extremeForm("Extreme Form", 1, 150);
 		std::cout << "Extreme form: " << extremeForm << std::endl;
-		
+
 		Bureaucrat	topBureaucrat("TopDog", 1);
 		std::cout << "Top bureaucrat: " << topBureaucrat << std::endl;
 		topBureaucrat.sign_form(extremeForm);
 		std::cout << "After signing: " << extremeForm << std::endl;
-		
+
 		Form	anotherForm("Another Form", 150, 1);
 		std::cout << "Another form: " << anotherForm << std::endl;
-		
+
 		Bureaucrat	bottomBureaucrat("Nobody", 150);
 		std::cout << "Bottom bureaucrat: " << bottomBureaucrat << std::endl;
 		bottomBureaucrat.sign_form(anotherForm);
@@ -140,6 +139,7 @@ void	test_copy_and_assignment()
 		
 		// Sign the original
 		Bureaucrat	signer("Signer", 40);
+		std::cout << signer << std::endl;
 		signer.sign_form(original);
 		std::cout << "Original after signing: " << original << std::endl;
 		
@@ -150,7 +150,7 @@ void	test_copy_and_assignment()
 		// Test assignment
 		Form	assigned("Temp", 100, 100);
 		std::cout << "Before assignment: " << assigned << std::endl;
-		assigned = original;
+		assigned = copy;
 		std::cout << "After assignment: " << assigned << std::endl;
 	}
 	catch (std::exception &e)

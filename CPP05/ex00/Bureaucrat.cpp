@@ -10,7 +10,7 @@ Bureaucrat::Bureaucrat() : _name("Default_Bureaucrat"), _grade(LOWEST_GRADE)
 
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name), _grade(grade)
 {
-	std::cout << "Bureaucrat parameterized constructor called with grade: " << grade << std::endl;
+	std::cout << "Bureaucrat parameterized constructor"<< std::endl;
 	validateGrade(grade);
 }
 
@@ -64,12 +64,12 @@ void	Bureaucrat::validateGrade(int grade) const
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("Grade is too high! (minimum grade is 1)");
+	return ("Grade is too high! (maximum grade is 1)");
 }
 
 const char	*Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("Grade is too low! (maximum grade is 150)");
+	return ("Grade is too low! (minimum grade is 150)");
 }
 
 std::ostream	&operator<<(std::ostream& out, const Bureaucrat& bureaucrat)
