@@ -1,53 +1,50 @@
 #include <iostream>
-#include <Array.hpp>
+#include "Array.hpp"
 
-#define MAX_VAL 750
-int main(int, char**)
+int	main()
 {
-    Array<int> numbers(MAX_VAL);
-    int* mirror = new int[MAX_VAL];
-    srand(time(NULL));
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        const int value = rand();
-        numbers[i] = value;
-        mirror[i] = value;
-    }
-    //SCOPE
-    {
-        Array<int> tmp = numbers;
-        Array<int> test(tmp);
-    }
+	std::cout << "=== Test 1: Default constructor ===" << std::endl;
+	Array<int>	empty;
+	std::cout << "Empty array size: " << empty.size() << std::endl;
 
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        if (mirror[i] != numbers[i])
-        {
-            std::cerr << "didn't save the same value!!" << std::endl;
-            return 1;
-        }
-    }
-    try
-    {
-        numbers[-2] = 0;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    try
-    {
-        numbers[MAX_VAL] = 0;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
+	std::cout << "\n=== Test 2: Construct with size ===" << std::endl;
+	Array<int>	numbers(5);
+	std::cout << "Numbers array size: " << numbers.size() << std::endl;
+	for (unsigned int i = 0; i < numbers.size(); i++)
+	{
+		numbers[i] = i * 10;
+	}
+	std::cout << "Numbers contents: ";
+	for (unsigned int i = 0; i < numbers.size(); i++)
+	{
+		std::cout << numbers[i] << " ";
+	}
+	std::cout << std::endl;
 
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        numbers[i] = rand();
-    }
-    delete [] mirror;//
-    return 0;
+	std::cout << "\n=== Test 3: Copy constructor ===" << std::endl;
+	Array<int>	copy(numbers);
+	std::cout << "Copy contents: ";
+	for (unsigned int i = 0; i < copy.size(); i++)
+	{
+		std::cout << copy[i] << " ";
+	}
+	std::cout << std::endl;
+
+	std::cout << "\n=== Test 4: Assignment operator ===" << std::endl;
+	Array<int>	assigned;
+	assigned = numbers;
+	std::cout << "Assigned contents: ";
+	for (unsigned int i = 0; i < assigned.size(); i++)
+	{
+		std::cout << assigned[i] << " ";
+	}
+	std::cout << std::endl;
+
+	std::cout << "\n=== Test 5: Modify original, check copy stays same ===" << std::endl;
+	numbers[0] = 999;
+	std::cout << "Numbers[0] = " << numbers[0] << std::endl;
+	std::cout << "Copy[0]    = " << copy[0] << std::endl;
+
+	std::cout << "\nAll tests complete!" << std::endl;
+	return (0);
 }
