@@ -26,7 +26,7 @@ class Array
 		Array();
 		Array(unsigned int n);
 		Array(const Array<T>& other);
-		Array<T>& operator=(const Array<T>& other);
+		Array<T>	&operator=(const Array<T>& other);
 		~Array();
 		
 		T	&operator[](unsigned int index);
