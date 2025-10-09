@@ -20,6 +20,7 @@
 		"cwchar": "cpp",
 		"cwctype": "cpp",
 		"deque": "cpp",
+		"list": "cpp",
 		"map": "cpp",
 		"string": "cpp",
 		"unordered_map": "cpp",
@@ -40,6 +41,7 @@
 		"type_traits": "cpp",
 		"utility": "cpp",
 		"format": "cpp",
+		"fstream": "cpp",
 		"initializer_list": "cpp",
 		"iomanip": "cpp",
 		"iosfwd": "cpp",
@@ -56,8 +58,7 @@
 		"text_encoding": "cpp",
 		"cinttypes": "cpp",
 		"typeinfo": "cpp",
-		"variant": "cpp",
-		"fstream": "cpp"
+		"variant": "cpp"
 	},
 	"C_Cpp.errorSquiggles": "enabled"
 }

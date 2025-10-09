@@ -6,7 +6,7 @@
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 15:12:36 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/10/02 15:12:36 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/10/09 12:14:29 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ template <typename T, typename Container>
 MutantStack<T, Container>::MutantStack() : std::stack<T, Container>() {}
 
 template <typename T, typename Container>
-MutantStack<T, Container>::MutantStack(const MutantStack& other) : std::stack<T, Container>(other) {}
+MutantStack<T, Container>::MutantStack(const MutantStack &other) : std::stack<T, Container>(other) {}
 
 template <typename T, typename Container>
-MutantStack<T, Container> &MutantStack<T, Container>::operator=(const MutantStack& other)
+MutantStack<T, Container> &MutantStack<T, Container>::operator=(const MutantStack &other)
 {
 	if (this != &other)
 		std::stack<T, Container>::operator=(other);

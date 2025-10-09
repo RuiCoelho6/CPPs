@@ -5,52 +5,61 @@
 // Test functions for different types
 
 // Function that takes non-const reference (can modify)
-void incrementInt(int& n) {
-    n++;
-    std::cout << "Incremented to: " << n << std::endl;
+void	incrementInt(int &n)
+{
+	n++;
+	std::cout << "Incremented to: " << n << std::endl;
 }
 
 // Function that takes const reference (read-only)
-void printInt(const int& n) {
-    std::cout << "Value: " << n << std::endl;
+void	printInt(const int &n)
+{
+	std::cout << "Value: " << n << std::endl;
 }
 
 // Function for strings (non-const)
-void appendExclamation(std::string& s) {
-    s += "!";
-    std::cout << "Modified string: " << s << std::endl;
+void	appendExclamation(std::string &s)
+{
+	s += "!";
+	std::cout << "Modified string: " << s << std::endl;
 }
 
 // Function for strings (const)
-void printString(const std::string& s) {
-    std::cout << "String: " << s << std::endl;
+void	printString(const std::string &s)
+{
+	std::cout << "String: " << s << std::endl;
 }
 
 // Function for doubles (const)
-void printDouble(const double& d) {
-    std::cout << "Double: " << d << std::endl;
+void	printDouble(const double &d)
+{
+	std::cout << "Double: " << d << std::endl;
 }
 
 // Function for doubles (non-const)
-void doubleValue(double& d) {
-    d *= 2;
-    std::cout << "Doubled to: " << d << std::endl;
+void	doubleValue(double &d)
+{
+	d *= 2;
+	std::cout << "Doubled to: " << d << std::endl;
 }
 
 // Template function that can work with any type
 template<typename T>
-void printGeneric(const T& value) {
-    std::cout << "Generic print: " << value << std::endl;
+void	printGeneric(const T &value)
+{
+	std::cout << "Generic print: " << value << std::endl;
 }
 
 // Template function that modifies (for testing with instantiated function template)
 template<typename T>
-void resetToZero(T& value) {
-    value = T{}; // Default construct (0 for numbers, empty for strings, etc.)
-    std::cout << "Reset to default: " << value << std::endl;
+void	resetToZero(T &value)
+{
+	value = T{}; // Default construct (0 for numbers, empty for strings, etc.)
+	std::cout << "Reset to default: " << value << std::endl;
 }
 
-int main() {
+int	main()
+{
 	std::cout << "=== Testing iter function template ===" << std::endl;
 
 	// Test 1: Non-const int array with modifying function

@@ -6,17 +6,17 @@
 #    By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/16 14:57:21 by rpires-c          #+#    #+#              #
-#    Updated: 2025/09/16 15:00:28 by rpires-c         ###   ########.fr        #
+#    Updated: 2025/10/09 15:22:37 by rpires-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = comparison
+NAME = btc
 
 CC = c++
 
 FLAGS = -std=c++98 -Wall -Wextra -Werror
 
-SRC = main.cpp ScalarConverter.cpp
+SRC = main.cpp BitcoinExchange.cpp
 
 OBJDIR = Objs
 OBJS = $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRC))
