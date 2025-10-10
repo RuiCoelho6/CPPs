@@ -6,7 +6,7 @@
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 15:05:54 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/10/09 15:41:28 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/10/10 16:53:32 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ bool BitcoinExchange::isValidDate(const std::string &date) const
 	if (year < 0 || month < 1 || month > 12 || day < 1 || day > 31)
 		return (false);
 
-	// Basic day validation per month
 	if (month == 2)
 	{
 		bool	isLeap = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
@@ -58,7 +57,6 @@ bool BitcoinExchange::isValidDate(const std::string &date) const
 		if (day > 30)
 			return (false);
 	}
-
 	return (true);
 }
 

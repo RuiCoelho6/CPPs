@@ -6,7 +6,7 @@
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 13:34:20 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/10/09 15:21:41 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/10/10 17:39:41 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,11 @@ int	main(int argc, char **argv)
 
 	BitcoinExchange	exchange;
 
-	// Initialize with the database file (you need to provide data.csv)
-	if (!exchange.initialize("data.csv"))
+	if (!exchange.initialize(filename.c_str()))
 	{
 		return (1);
 	}
 
-	// Process the input file
 	exchange.processInputFile(argv[1]);
 
 	return (0);
