@@ -10,13 +10,13 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = comparison
+NAME = RPN
 
 CC = c++
 
 FLAGS = -std=c++98 -Wall -Wextra -Werror
 
-SRC = main.cpp ScalarConverter.cpp
+SRC = main.cpp RPN.cpp
 
 OBJDIR = Objs
 OBJS = $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRC))

@@ -21,7 +21,7 @@ Span::Span(unsigned int N) : _maxSize(N)
 	_numbers.reserve(N);
 }
 
-Span::Span(const Span& other) : _maxSize(other._maxSize), _numbers(other._numbers) {}
+Span::Span(const Span &other) : _maxSize(other._maxSize), _numbers(other._numbers) {}
 
 Span	&Span::operator=(const Span& other)
 {

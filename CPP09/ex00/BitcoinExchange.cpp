@@ -25,7 +25,7 @@ std::string	BitcoinExchange::trim(const std::string &str) const
 	return (str.substr(start, end - start + 1));
 }
 
-bool BitcoinExchange::isValidDate(const std::string &date) const
+bool	BitcoinExchange::isValidDate(const std::string &date) const
 {
 	if (date.length() != 10)
 		return (false);
