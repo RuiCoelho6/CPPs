@@ -6,7 +6,7 @@
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 14:57:24 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/09/16 14:57:25 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/10/14 15:30:54 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ ScalarConverter::ScalarConverter()
 	std::cout << "ScalarConverter default constructor" << std::endl;
 }
 
-ScalarConverter::ScalarConverter(const ScalarConverter &other)
+ScalarConverter::ScalarConverter(const ScalarConverter &)
 {
 	std::cout << "ScalarConverter copy constructor" << std::endl;
 }
-ScalarConverter	&ScalarConverter::operator=(const ScalarConverter &other)
+ScalarConverter	&ScalarConverter::operator=(const ScalarConverter &)
 {
 	std::cout << "ScalarConverter assignment operator" << std::endl;
 	return (*this);
