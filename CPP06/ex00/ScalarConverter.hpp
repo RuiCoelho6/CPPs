@@ -6,7 +6,7 @@
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 14:57:27 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/09/16 14:57:28 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/10/14 15:37:42 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 #include <cmath>
 #include <climits>
 #include <cfloat>
+#include <sstream>
+#include <cctype>
 
 class ScalarConverter
 {

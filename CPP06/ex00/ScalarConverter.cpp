@@ -6,13 +6,11 @@
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 14:57:24 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/10/14 15:30:54 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/10/14 15:37:38 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
-#include <sstream>
-#include <cctype>
 
 ScalarConverter::ScalarConverter()
 {
@@ -195,6 +193,7 @@ void	ScalarConverter::displayDouble(double value, bool impossible)
 void	ScalarConverter::convertFromChar(char c)
 {
 	double	value = static_cast<double>(c);
+
 	displayChar(value);
 	displayInt(value);
 	displayFloat(value);
@@ -204,6 +203,7 @@ void	ScalarConverter::convertFromChar(char c)
 void	ScalarConverter::convertFromInt(int value)
 {
 	double	doubleValue = static_cast<double>(value);
+
 	displayChar(doubleValue);
 	displayInt(doubleValue);
 	displayFloat(doubleValue);
@@ -213,6 +213,7 @@ void	ScalarConverter::convertFromInt(int value)
 void	ScalarConverter::convertFromFloat(float value)
 {
 	double	doubleValue = static_cast<double>(value);
+
 	displayChar(doubleValue);
 	displayInt(doubleValue);
 	displayFloat(doubleValue);
