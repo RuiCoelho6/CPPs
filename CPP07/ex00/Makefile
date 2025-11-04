@@ -6,7 +6,7 @@
 #    By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/16 14:57:21 by rpires-c          #+#    #+#              #
-#    Updated: 2025/09/16 15:00:28 by rpires-c         ###   ########.fr        #
+#    Updated: 2025/11/04 13:36:06 by rpires-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = c++
 
 FLAGS = -std=c++98 -Wall -Wextra -Werror
 
-SRC = main.cpp ScalarConverter.cpp
+SRC = main.cpp
 
 OBJDIR = Objs
 OBJS = $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRC))
