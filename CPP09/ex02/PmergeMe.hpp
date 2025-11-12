@@ -6,7 +6,7 @@
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 12:13:41 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/10/13 12:13:41 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/11/12 17:03:54 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ class PmergeMe
 		size_t	binarySearchVector(const std::vector<int> &arr, int value, size_t end);
 		
 		// Deque implementation
-		void	mergeInsertSortDeque(std::deque<int>& arr);
+		void	mergeInsertSortDeque(std::deque<int> &arr);
 		void	sortPairsDeque(std::deque<std::pair<int, int> > &pairs);
 		void	insertionSortDeque(std::deque<int> &arr, int value, size_t end);
 		size_t	binarySearchDeque(const std::deque<int> &arr, int value, size_t end);
