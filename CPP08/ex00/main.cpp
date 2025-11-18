@@ -6,11 +6,11 @@
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 12:01:19 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/10/09 12:12:52 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/11/18 15:06:25 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "easyfind.hpp"
+#include "easyFind.hpp"
 #include <iostream>
 #include <vector>
 #include <list>
@@ -29,7 +29,7 @@ int	main()
 
 		try
 		{
-			std::vector<int>::iterator it = easyfind(vec, 3);
+			std::vector<int>::iterator it = easyFind(vec, 3);
 			std::cout << "Found: " << *it << std::endl;
 		}
 		catch (const std::exception& e)
@@ -39,7 +39,7 @@ int	main()
 
 		try
 		{
-			std::vector<int>::iterator it = easyfind(vec, 42);
+			std::vector<int>::iterator it = easyFind(vec, 42);
 			std::cout << "Found: " << *it << std::endl;
 		}
 		catch (const std::exception& e)
@@ -58,7 +58,7 @@ int	main()
 
 		try
 		{
-			std::list<int>::iterator it = easyfind(lst, 20);
+			std::list<int>::iterator it = easyFind(lst, 20);
 			std::cout << "Found: " << *it << std::endl;
 		}
 		catch (const std::exception& e)
@@ -68,7 +68,7 @@ int	main()
 
 		try
 		{
-			std::list<int>::iterator it = easyfind(lst, 100);
+			std::list<int>::iterator it = easyFind(lst, 100);
 			std::cout << "Found: " << *it << std::endl;
 		}
 		catch (const std::exception& e)
@@ -86,7 +86,7 @@ int	main()
 
 		try
 		{
-			std::deque<int>::iterator it = easyfind(deq, 15);
+			std::deque<int>::iterator it = easyFind(deq, 15);
 			std::cout << "Found: " << *it << std::endl;
 		}
 		catch (const std::exception& e)
@@ -96,7 +96,7 @@ int	main()
 
 		try
 		{
-			std::deque<int>::iterator it = easyfind(deq, 35);
+			std::deque<int>::iterator it = easyFind(deq, 35);
 			std::cout << "Found: " << *it << std::endl;
 		}
 		catch (const std::exception& e)
@@ -111,7 +111,7 @@ int	main()
 
 		try
 		{
-			std::vector<int>::iterator it = easyfind(empty, 1);
+			std::vector<int>::iterator it = easyFind(empty, 1);
 			std::cout << "Found: " << *it << std::endl;
 		}
 		catch (const std::exception& e)
@@ -129,7 +129,7 @@ int	main()
 
 		try
 		{
-			std::vector<int>::iterator it = easyfind(vec, 7);
+			std::vector<int>::iterator it = easyFind(vec, 7);
 			std::cout << "Found first occurrence: " << *it << std::endl;
 			std::cout << "Position: " << (it - vec.begin()) << std::endl;
 		}

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.tpp                                       :+:      :+:    :+:   */
+/*   easyFind.tpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 12:03:22 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/10/09 12:12:35 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/11/18 15:11:52 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define EASYFIND_TPP
 
 template <typename T>
-typename T::iterator	easyfind(T &container, int value)
+typename T::iterator	easyFind(T &container, int value)
 {
 	typename T::iterator	it = std::find(container.begin(), container.end(), value);
 
