@@ -6,11 +6,11 @@
 #    By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/16 14:57:21 by rpires-c          #+#    #+#              #
-#    Updated: 2025/11/18 15:16:31 by rpires-c         ###   ########.fr        #
+#    Updated: 2025/11/20 15:01:16 by rpires-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = easyFind
+NAME = ex00
 
 CC = c++
 

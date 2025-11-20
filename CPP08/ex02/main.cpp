@@ -6,7 +6,7 @@
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 15:13:01 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/10/02 15:13:01 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/11/20 17:28:58 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,27 @@
 
 int main()
 {
-MutantStack<int> mstack;
-mstack.push(5);
-mstack.push(17);
-std::cout << mstack.top() << std::endl;
-mstack.pop();
-std::cout << mstack.size() << std::endl;
-mstack.push(3);
-mstack.push(5);
-mstack.push(737);
-//[...]
-mstack.push(0);
-MutantStack<int>::iterator it = mstack.begin();
-MutantStack<int>::iterator ite = mstack.end();
-++it;
---it;
-while (it != ite)
-{
-std::cout << *it << std::endl;
-++it;
-}
-std::stack<int> s(mstack);
-return 0;
+	MutantStack<int> mstack;
+	mstack.push(5);
+	mstack.push(17);
+	std::cout << "Top: " << mstack.top() << std::endl;
+	mstack.pop();
+	std::cout << "Size: " << mstack.size() << std::endl;
+	mstack.push(3);
+	mstack.push(5);
+	mstack.push(737);
+	//[...]
+	mstack.push(0);
+	MutantStack<int>::iterator	it = mstack.begin();
+	MutantStack<int>::iterator	ite = mstack.end();
+	++it;
+	--it;
+	std::cout << "Iteration through stack: " << std::endl;
+	while (it != ite)
+	{
+		std::cout << *it << std::endl;
+		++it;
+	}
+	std::stack<int> s(mstack);
+	return (0);
 }
