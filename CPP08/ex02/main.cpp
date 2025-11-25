@@ -6,7 +6,7 @@
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 15:13:01 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/11/20 17:28:58 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/11/25 12:14:17 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int main()
 {
-	MutantStack<int> mstack;
+	MutantStack<int>	mstack;
 	mstack.push(5);
 	mstack.push(17);
 	std::cout << "Top: " << mstack.top() << std::endl;
