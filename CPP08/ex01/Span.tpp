@@ -6,7 +6,7 @@
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 15:12:15 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/11/20 15:13:27 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/11/25 14:45:58 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ void	Span::addRange(Iterator begin, Iterator end)
 	{
 		if (_numbers.size() >= _maxSize)
 			throw SpanFullException();
-		_numbers.push_back(*it);
+		_numbers.push_back(it);
 	}
 }
