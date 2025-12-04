@@ -13,37 +13,21 @@
 #include "BitcoinExchange.hpp"
 #include <iostream>
 
-int	main(int argc, char **argv)
+int main(int argc, char **argv)
 {
-	if (argc != 2)
+	if (argc < 2 || argc > 3)
 	{
-		std::cerr << "Usage: " << argv[0] << " <csv_file>/<txt_file>\n";
-		return (1);
-	}
-
-	std::string	filename = argv[1];
-
-	if (filename.size() > 4)
-	{
-		std::string	extension = filename.substr(filename.size() - 4);
-
-		if (!(extension == ".csv" || extension == ".txt"))
-		{
-			std::cout << "Not a CSV or TXT file\n";
-			return (1);
-		}
-	} else
-	{
-		std::cout << "String too short\n";
+		std::cerr << "Usage: " << argv[0] << " <input_file> [database_file]" << std::endl;
+		std::cerr << "Default database: data.csv" << std::endl;
 		return (1);
 	}
 
 	BitcoinExchange	exchange;
 
-	if (!exchange.initialize(filename.c_str()))
-	{
+	std::string	databaseFile = (argc == 3) ? argv[2] : "data.csv";
+
+	if (!exchange.loadDatabase(databaseFile))
 		return (1);
-	}
 
 	exchange.processInputFile(argv[1]);
 

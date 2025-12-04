@@ -13,30 +13,27 @@
 #ifndef BITCOINEXCHANGE_HPP
 # define BITCOINEXCHANGE_HPP
 
-#include <fstream>
-#include <sstream>
-#include <iostream>
-#include <cstdlib>
-#include <map>
-#include <string>
+# include <string>
+# include <map>
 
 class BitcoinExchange
 {
 	private:
-		std::map<std::string, float> _priceDatabase;
+		std::map<std::string, float>	_exchangeRates;
 		
-		bool	loadDatabase(const std::string &filename);
 		bool	isValidDate(const std::string &date) const;
 		bool	isValidValue(const std::string &valueStr, float &value) const;
-		std::string	findClosestDate(const std::string &date) const;
-		void	processLine(const std::string &line);
 		std::string	trim(const std::string &str) const;
+		std::string	findClosestDate(const std::string &date) const;
+
 	public:
 		BitcoinExchange();
 		~BitcoinExchange();
+		BitcoinExchange(const BitcoinExchange &other);
+		BitcoinExchange	&operator=(const BitcoinExchange &other);
 		
-		bool	initialize(const std::string &dbFilename);
+		bool	loadDatabase(const std::string &filename);
 		void	processInputFile(const std::string &filename);
-	};
+};
 
 #endif
