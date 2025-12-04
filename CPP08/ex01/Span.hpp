@@ -6,7 +6,7 @@
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 15:00:23 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/10/09 12:13:28 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/11/20 15:12:54 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,6 @@ class Span
 		};
 };
 
-template <typename Iterator>
-void	Span::addRange(Iterator begin, Iterator end)
-{
-	for (Iterator it = begin; it != end; ++it)
-	{
-		if (_numbers.size() >= _maxSize)
-			throw SpanFullException();
-		_numbers.push_back(*it);
-	}
-}
+#include "Span.tpp"
 
 #endif

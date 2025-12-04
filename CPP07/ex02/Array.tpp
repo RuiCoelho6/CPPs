@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Array.tpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/12 17:01:11 by rpires-c          #+#    #+#             */
+/*   Updated: 2025/11/18 13:20:50 by rpires-c         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdexcept>
 
 template<typename T>
@@ -7,7 +19,7 @@ template<typename T>
 Array<T>::Array(unsigned int n) : _elements(n ? new T[n]() : NULL), _size(n) {}
 
 template<typename T>
-Array<T>::Array(const Array<T>& other) : _elements(other._size ? new T[other._size] : NULL), _size(other._size)
+Array<T>::Array(const Array<T> &other) : _elements(other._size ? new T[other._size] : NULL), _size(other._size)
 {
 	for (unsigned int i = 0; i < _size; ++i)
 		_elements[i] = other._elements[i];
@@ -20,10 +32,10 @@ Array<T>::~Array()
 }
 
 template<typename T>
-Array<T>	&Array<T>::operator=(const Array<T>& other)
+Array<T>	&Array<T>::operator=(const Array<T> &other)
 {
 	if (this == &other)
-		return *this;
+		return (*this);
 
 	T	*new_elems = other._size ? new T[other._size]() : NULL;
 	for (unsigned int i = 0; i < other._size; ++i)

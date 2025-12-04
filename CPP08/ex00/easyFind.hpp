@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   easyFind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 12:02:24 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/10/09 12:12:21 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/11/18 15:06:49 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 #include <stdexcept>
 
 template <typename T>
-typename T::iterator	easyfind(T &container, int value);
+typename T::iterator	easyFind(T &container, int value);
 
-#include "easyfind.tpp"
+#include "easyFind.tpp"
 
 #endif

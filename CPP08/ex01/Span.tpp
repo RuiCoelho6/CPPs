@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   Span.tpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/12 17:01:27 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/11/12 17:01:28 by rpires-c         ###   ########.fr       */
+/*   Created: 2025/11/20 15:12:15 by rpires-c          #+#    #+#             */
+/*   Updated: 2025/11/25 14:45:58 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_HPP
-#define ITER_HPP
+#include <exception>
 
-#include <cstddef>
-
-template<typename T, typename Func>
-void	iter(T* array, std::size_t length, Func func)
+template <typename Iterator>
+void	Span::addRange(Iterator begin, Iterator end)
 {
-	for (std::size_t i = 0; i < length; ++i)
+	for (Iterator it = begin; it != end; ++it)
 	{
-		func(array[i]);
+		if (_numbers.size() >= _maxSize)
+			throw SpanFullException();
+		_numbers.push_back(it);
 	}
 }
-
-#endif

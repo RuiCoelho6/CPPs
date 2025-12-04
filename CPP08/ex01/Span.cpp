@@ -6,7 +6,7 @@
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 15:02:41 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/10/02 15:02:41 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/11/20 15:06:56 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Span::Span(unsigned int N) : _maxSize(N)
 
 Span::Span(const Span &other) : _maxSize(other._maxSize), _numbers(other._numbers) {}
 
-Span	&Span::operator=(const Span& other)
+Span	&Span::operator=(const Span &other)
 {
 	if (this != &other)
 	{
@@ -47,7 +47,7 @@ int	Span::shortestSpan() const
 	if (_numbers.size() < 2)
 		throw NoSpanException();
 
-	std::vector<int> sorted = _numbers;
+	std::vector<int>	sorted = _numbers;
 	std::sort(sorted.begin(), sorted.end());
 	int	minSpan = std::numeric_limits<int>::max();
 

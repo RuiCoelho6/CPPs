@@ -6,7 +6,7 @@
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 15:02:15 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/09/16 15:02:16 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/11/18 13:20:24 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ class Array
 	public:
 		Array();
 		Array(unsigned int n);
-		Array(const Array<T>& other);
-		Array<T>	&operator=(const Array<T>& other);
+		Array(const Array<T> &other);
+		Array<T>	&operator=(const Array<T> &other);
 		~Array();
 		
 		T	&operator[](unsigned int index);

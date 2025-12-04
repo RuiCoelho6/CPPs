@@ -6,24 +6,22 @@
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 14:57:24 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/09/16 14:57:25 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/10/28 14:21:06 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
-#include <sstream>
-#include <cctype>
 
 ScalarConverter::ScalarConverter()
 {
 	std::cout << "ScalarConverter default constructor" << std::endl;
 }
 
-ScalarConverter::ScalarConverter(const ScalarConverter &other)
+ScalarConverter::ScalarConverter(const ScalarConverter &)
 {
 	std::cout << "ScalarConverter copy constructor" << std::endl;
 }
-ScalarConverter	&ScalarConverter::operator=(const ScalarConverter &other)
+ScalarConverter	&ScalarConverter::operator=(const ScalarConverter &)
 {
 	std::cout << "ScalarConverter assignment operator" << std::endl;
 	return (*this);
@@ -168,7 +166,10 @@ void	ScalarConverter::displayFloat(double value, bool impossible)
 	} else
 	{
 		float f = static_cast<float>(value);
-		std::cout << std::fixed << std::setprecision(1) << f << "f";
+		std::cout << f;
+		if (f == static_cast<int>(f))
+			std::cout << ".0";
+		std::cout << "f";
 	}
 	std::cout << std::endl;
 }
@@ -187,7 +188,9 @@ void	ScalarConverter::displayDouble(double value, bool impossible)
 		std::cout << (value > 0 ? "+inf" : "-inf");
 	} else
 	{
-		std::cout << std::fixed << std::setprecision(1) << value;
+		std::cout << value;
+		if (value == static_cast<int>(value))
+			std::cout << ".0";
 	}
 	std::cout << std::endl;
 }
@@ -195,6 +198,7 @@ void	ScalarConverter::displayDouble(double value, bool impossible)
 void	ScalarConverter::convertFromChar(char c)
 {
 	double	value = static_cast<double>(c);
+
 	displayChar(value);
 	displayInt(value);
 	displayFloat(value);
@@ -204,6 +208,7 @@ void	ScalarConverter::convertFromChar(char c)
 void	ScalarConverter::convertFromInt(int value)
 {
 	double	doubleValue = static_cast<double>(value);
+
 	displayChar(doubleValue);
 	displayInt(doubleValue);
 	displayFloat(doubleValue);
@@ -213,6 +218,7 @@ void	ScalarConverter::convertFromInt(int value)
 void	ScalarConverter::convertFromFloat(float value)
 {
 	double	doubleValue = static_cast<double>(value);
+
 	displayChar(doubleValue);
 	displayInt(doubleValue);
 	displayFloat(doubleValue);
