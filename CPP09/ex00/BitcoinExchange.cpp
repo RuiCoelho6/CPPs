@@ -6,7 +6,7 @@
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 15:05:54 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/10/10 16:53:32 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/12/10 15:19:01 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ BitcoinExchange::BitcoinExchange() {}
 
 BitcoinExchange::~BitcoinExchange() {}
 
-BitcoinExchange::BitcoinExchange(const BitcoinExchange &other) : _exchangeRates(other._exchangeRates) {}
+BitcoinExchange::BitcoinExchange(const BitcoinExchange& other) : _exchangeRates(other._exchangeRates) {}
 
 BitcoinExchange	&BitcoinExchange::operator=(const BitcoinExchange &other)
 {
@@ -57,7 +57,7 @@ bool	BitcoinExchange::isValidDate(const std::string &date) const
 	int	year = atoi(date.substr(0, 4).c_str());
 	int	month = atoi(date.substr(5, 2).c_str());
 	int	day = atoi(date.substr(8, 2).c_str());
-
+	
 	if (year < 0 || month < 1 || month > 12 || day < 1 || day > 31)
 		return (false);
 
@@ -75,7 +75,7 @@ bool	BitcoinExchange::isValidDate(const std::string &date) const
 	return (true);
 }
 
-bool	BitcoinExchange::isValidValue(const std::string& valueStr, float& value) const
+bool	BitcoinExchange::isValidValue(const std::string &valueStr, float &value) const
 {
 	char	*end;
 	value = strtof(valueStr.c_str(), &end);
@@ -94,7 +94,7 @@ bool	BitcoinExchange::isValidValue(const std::string& valueStr, float& value) co
 		std::cout << "Error: too large a number." << std::endl;
 		return (false);
 	}
-
+	
 	return (true);
 }
 
@@ -115,6 +115,7 @@ std::string	BitcoinExchange::findClosestDate(const std::string &date) const
 bool	BitcoinExchange::loadDatabase(const std::string &filename)
 {
 	std::ifstream	file(filename.c_str());
+
 	if (!file.is_open())
 	{
 		std::cerr << "Error: could not open database file." << std::endl;
@@ -136,7 +137,7 @@ bool	BitcoinExchange::loadDatabase(const std::string &filename)
 		if (!isValidDate(date))
 			continue ;
 
-		float rate = strtof(rateStr.c_str(), NULL);
+		float	rate = strtof(rateStr.c_str(), NULL);
 		_exchangeRates[date] = rate;
 	}
 
@@ -187,7 +188,7 @@ void	BitcoinExchange::processInputFile(const std::string &filename)
 
 		float	rate = _exchangeRates[closestDate];
 		float	result = value * rate;
-		
+
 		std::cout << date << " => " << value << " = " << result << std::endl;
 	}
 

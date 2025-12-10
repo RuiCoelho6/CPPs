@@ -6,7 +6,7 @@
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 13:34:20 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/10/10 17:39:41 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/12/10 14:12:08 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@
 
 int main(int argc, char **argv)
 {
-	if (argc < 2 || argc > 3)
+	if (argc != 2)
 	{
-		std::cerr << "Usage: " << argv[0] << " <input_file> [database_file]" << std::endl;
-		std::cerr << "Default database: data.csv" << std::endl;
+		std::cerr << "Error: could not open file." << std::endl;
+		std::cerr << "Usage: " << argv[0] << " <input_file>" << std::endl;
+
 		return (1);
 	}
 
