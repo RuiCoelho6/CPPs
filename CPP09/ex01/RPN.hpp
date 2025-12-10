@@ -6,7 +6,7 @@
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 08:51:14 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/10/11 08:51:14 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/12/10 16:02:34 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class RPN
 		RPN();
 		~RPN();
 
-		int	solve(const char *str);
+		bool	solve(const char *str, int &res);
 };
 
 #endif

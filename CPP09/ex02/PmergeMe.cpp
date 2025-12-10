@@ -6,7 +6,7 @@
 /*   By: rpires-c <rpires-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 12:13:34 by rpires-c          #+#    #+#             */
-/*   Updated: 2025/10/13 12:13:34 by rpires-c         ###   ########.fr       */
+/*   Updated: 2025/12/10 16:26:33 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,13 +61,15 @@ size_t	PmergeMe::jacobsthal(size_t n)
 	if (n == 1)
 		return (1);
 
-	size_t	a = 0, b = 1;
+	size_t	a = 0;
+	size_t	b = 1;
 	for (size_t i = 2; i <= n; ++i)
 	{
 		size_t	temp = b;
 		b = b + 2 * a;
 		a = temp;
 	}
+
 	return (b);
 }
 
@@ -75,6 +77,7 @@ void	PmergeMe::generateJacobsthalSequence(std::vector<size_t> &seq, size_t limit
 {
 	seq.clear();
 	size_t	idx = 3;
+
 	while (true)
 	{
 		size_t	j = jacobsthal(idx);
@@ -99,6 +102,7 @@ size_t	PmergeMe::binarySearchVector(const std::vector<int> &arr, int value, size
 		else
 			right = mid;
 	}
+
 	return (left);
 }
 
