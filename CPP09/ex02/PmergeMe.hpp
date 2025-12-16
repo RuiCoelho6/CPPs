@@ -57,8 +57,7 @@ class PmergeMe
 		const std::vector<int>	&getVectorData() const;
 		const std::deque<int>	&getDequeData() const;
 		
-		void	printBefore(const std::vector<int> &data) const;
-		void	printAfter(const std::vector<int> &data) const;
+		void	printArray(const std::vector<int> &data, const std::string beforeOrAfter) const;
 };
 
 #endif

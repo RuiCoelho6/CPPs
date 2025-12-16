@@ -23,23 +23,20 @@ void	PmergeMe::parseInput(int argc, char **argv)
 
 	for (int i = 1; i < argc; ++i)
 	{
-		std::string arg = argv[i];
+		std::string	arg = argv[i];
 
 		if (arg.empty())
 			throw std::runtime_error("Error: Empty argument");
 
-		// Check for negative numbers
 		if (arg[0] == '-')
 			throw std::runtime_error("Error: Negative numbers not allowed");
 
-		// Check for non-digit characters
 		for (size_t j = 0; j < arg.length(); ++j)
 		{
 			if (!isdigit(arg[j]))
 				throw std::runtime_error("Error: Invalid input");
 		}
 
-		// Convert to integer
 		char	*end;
 		long	num = std::strtol(arg.c_str(), &end, 10);
 
@@ -50,8 +47,8 @@ void	PmergeMe::parseInput(int argc, char **argv)
 		_deqData.push_back(static_cast<int>(num));
 	}
 
-	if (_vecData.empty())
-		throw std::runtime_error("Error: No valid input");
+	if (_vecData.empty() || _deqData.empty())
+		throw std::runtime_error("Error: Array empty");
 }
 
 size_t	PmergeMe::jacobsthal(size_t n)
@@ -119,9 +116,7 @@ void	PmergeMe::sortPairsVector(std::vector<std::pair<int, int> > &pairs)
 		for (size_t j = i + 1; j < pairs.size(); ++j)
 		{
 			if (pairs[i].second > pairs[j].second)
-			{
 				std::swap(pairs[i], pairs[j]);
-			}
 		}
 	}
 }
@@ -349,24 +344,10 @@ const std::deque<int>	&PmergeMe::getDequeData() const
 	return (_deqData);
 }
 
-void	PmergeMe::printBefore(const std::vector<int> &data) const
+void	PmergeMe::printArray(const std::vector<int> &data, std::string beforeOrAfter) const
 {
-	std::cout << "Before: ";
-	size_t	limit = std::min(data.size(), static_cast<size_t>(5));
-	for (size_t i = 0; i < limit; ++i)
-	{
-		std::cout << data[i];
-		if (i < limit - 1)
-			std::cout << " ";
-	}
-	if (data.size() > 5)
-		std::cout << " [...]";
-	std::cout << std::endl;
-}
-
-void	PmergeMe::printAfter(const std::vector<int> &data) const
-{
-	std::cout << "After:  ";
+	std::string	out = (beforeOrAfter == "After") ? "After" : "Before";
+	std::cout << out << ": ";
 	size_t	limit = std::min(data.size(), static_cast<size_t>(5));
 	for (size_t i = 0; i < limit; ++i)
 	{

@@ -15,6 +15,7 @@
 double	getTime()
 {
 	struct timeval	tv;
+
 	gettimeofday(&tv, NULL);
 	return (tv.tv_sec * 1000000.0 + tv.tv_usec);
 }
@@ -25,23 +26,18 @@ int	main(int argc, char **argv)
 	{
 		PmergeMe	pmerge;
 
-		// Parse input
 		pmerge.parseInput(argc, argv);
-
-		// Get original data for printing
 		std::vector<int> originalData = pmerge.getVectorData();
 
-		// Print before
-		pmerge.printBefore(originalData);
-
 		// Sort with vector and measure time
+		pmerge.printArray(originalData, "Before");
+
 		double	startVec = getTime();
 		pmerge.sortVector();
 		double	endVec = getTime();
 		double	timeVec = endVec - startVec;
 
-		// Print after
-		pmerge.printAfter(pmerge.getVectorData());
+		pmerge.printArray(pmerge.getVectorData(), "After");
 
 		// Sort with deque and measure time
 		double	startDeq = getTime();
@@ -49,7 +45,6 @@ int	main(int argc, char **argv)
 		double	endDeq = getTime();
 		double	timeDeq = endDeq - startDeq;
 
-		// Print timing results
 		std::cout << std::fixed << std::setprecision(5);
 		std::cout << "Time to process a range of " << originalData.size() 
 				<< " elements with std::vector : " << timeVec << " us" << std::endl;

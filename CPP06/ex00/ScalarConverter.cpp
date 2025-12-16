@@ -38,7 +38,7 @@ bool	ScalarConverter::isChar(const std::string &str)
 
 bool	ScalarConverter::isInt(const std::string &str)
 {
-	size_t start = 0;
+	size_t	start = 0;
 
 	if (str.empty())
 		return (false);
@@ -165,7 +165,7 @@ void	ScalarConverter::displayFloat(double value, bool impossible)
 		std::cout << (value > 0 ? "+inff" : "-inff");
 	} else
 	{
-		float f = static_cast<float>(value);
+		float	f = static_cast<float>(value);
 		std::cout << f;
 		if (f == static_cast<int>(f))
 			std::cout << ".0";
@@ -268,7 +268,7 @@ void	ScalarConverter::convert(const std::string &str)
 		convertFromChar(str[1]);
 	} else if (isInt(str))
 	{
-		std::stringstream ss(str);
+		std::stringstream	ss(str);
 		int	value;
 		ss >> value;
 		if (ss.fail())
@@ -280,7 +280,7 @@ void	ScalarConverter::convert(const std::string &str)
 	} else if (isFloat(str))
 	{
 		std::string	numStr = str.substr(0, str.length() - 1);
-		std::stringstream ss(numStr);
+		std::stringstream	ss(numStr);
 		float	value;
 		ss >> value;
 		if (ss.fail()) {
