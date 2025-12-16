@@ -25,9 +25,7 @@ int main(int argc, char **argv)
 
 	BitcoinExchange	exchange;
 
-	std::string	databaseFile = (argc == 3) ? argv[2] : "data.csv";
-
-	if (!exchange.loadDatabase(databaseFile))
+	if (!exchange.loadDatabase("data.csv"))
 		return (1);
 
 	exchange.processInputFile(argv[1]);
