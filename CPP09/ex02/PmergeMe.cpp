@@ -129,7 +129,7 @@ void	PmergeMe::mergeInsertSortVector(std::vector<int> &arr)
 	bool	hasStraggler = (arr.size() % 2 != 0);
 	int	straggler = hasStraggler ? arr.back() : 0;
 
-	// Create pairs and ensure larger is second
+	// Create pairs
 	std::vector<std::pair<int, int> >	pairs;
 	size_t	pairCount = arr.size() / 2;
 
@@ -146,7 +146,6 @@ void	PmergeMe::mergeInsertSortVector(std::vector<int> &arr)
 	// Sort pairs by larger element
 	sortPairsVector(pairs);
 
-	// Build main chain with larger elements
 	std::vector<int>	mainChain;
 	std::vector<int>	pend;
 
@@ -156,12 +155,10 @@ void	PmergeMe::mergeInsertSortVector(std::vector<int> &arr)
 		pend.push_back(pairs[i].first);
 	}
 
-	// Insert first pend element at beginning
 	if (!pend.empty())
 	{
 		mainChain.insert(mainChain.begin(), pend[0]);
 
-		// Insert remaining pend elements using Jacobsthal sequence
 		std::vector<size_t>	jacobSeq;
 		generateJacobsthalSequence(jacobSeq, pend.size());
 
@@ -173,7 +170,6 @@ void	PmergeMe::mergeInsertSortVector(std::vector<int> &arr)
 		{
 			size_t	currIdx = jacobSeq[i];
 
-			// Insert from currIdx down to lastIdx
 			for (size_t j = currIdx; j >= lastIdx && j > 0; --j)
 			{
 				if (!inserted[j])
@@ -185,7 +181,6 @@ void	PmergeMe::mergeInsertSortVector(std::vector<int> &arr)
 			lastIdx = currIdx + 1;
 		}
 
-		// Insert any remaining elements
 		for (size_t i = lastIdx; i < pend.size(); ++i)
 		{
 			if (!inserted[i])
@@ -195,7 +190,6 @@ void	PmergeMe::mergeInsertSortVector(std::vector<int> &arr)
 		}
 	}
 
-	// Insert straggler if exists
 	if (hasStraggler)
 	{
 		insertionSortVector(mainChain, straggler, mainChain.size());
@@ -239,9 +233,7 @@ void	PmergeMe::sortPairsDeque(std::deque<std::pair<int, int> > &pairs)
 		for (size_t j = i + 1; j < pairs.size(); ++j)
 		{
 			if (pairs[i].second > pairs[j].second)
-			{
 				std::swap(pairs[i], pairs[j]);
-			}
 		}
 	}
 }
@@ -268,7 +260,6 @@ void	PmergeMe::mergeInsertSortDeque(std::deque<int> &arr)
 			pairs.push_back(std::make_pair(a, b));
 	}
 
-	// Sort pairs by larger element
 	sortPairsDeque(pairs);
 
 	// Build main chain with larger elements
@@ -281,12 +272,10 @@ void	PmergeMe::mergeInsertSortDeque(std::deque<int> &arr)
 		pend.push_back(pairs[i].first);
 	}
 
-	// Insert first pend element at beginning
 	if (!pend.empty())
 	{
 		mainChain.insert(mainChain.begin(), pend[0]);
 
-		// Insert remaining pend elements using Jacobsthal sequence
 		std::vector<size_t>	jacobSeq;
 		generateJacobsthalSequence(jacobSeq, pend.size());
 
@@ -298,7 +287,6 @@ void	PmergeMe::mergeInsertSortDeque(std::deque<int> &arr)
 		{
 			size_t	currIdx = jacobSeq[i];
 
-			// Insert from currIdx down to lastIdx
 			for (size_t j = currIdx; j >= lastIdx && j > 0; --j)
 			{
 				if (!inserted[j])
@@ -310,21 +298,15 @@ void	PmergeMe::mergeInsertSortDeque(std::deque<int> &arr)
 			lastIdx = currIdx + 1;
 		}
 
-		// Insert any remaining elements
 		for (size_t i = lastIdx; i < pend.size(); ++i)
 		{
 			if (!inserted[i])
-			{
 				insertionSortDeque(mainChain, pend[i], mainChain.size());
-			}
 		}
 	}
 
-	// Insert straggler if exists
 	if (hasStraggler)
-	{
 		insertionSortDeque(mainChain, straggler, mainChain.size());
-	}
 
 	arr = mainChain;
 }
