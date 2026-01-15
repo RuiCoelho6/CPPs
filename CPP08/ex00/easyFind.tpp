@@ -10,9 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASYFIND_TPP
-#define EASYFIND_TPP
-
 template <typename T>
 typename T::iterator	easyFind(T &container, int value)
 {
@@ -24,4 +21,16 @@ typename T::iterator	easyFind(T &container, int value)
 	return (it);
 }
 
-#endif
+/* 
+//reverse iterator version
+template <typename T>
+typename T::iterator	easyFind(T &container, int value)
+{
+	typename T::reverse_iterator rit = std::find(container.rbegin(), container.rend(), value);
+
+	if (rit == container.rend())
+		throw std::runtime_error("Value not found in container");
+
+	return (--(rit.base()));
+}
+*/
