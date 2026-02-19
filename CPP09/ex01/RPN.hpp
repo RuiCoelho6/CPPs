@@ -26,8 +26,11 @@ class RPN
 {
 	private:
 		std::stack<int>	_stack;
+
 	public:
 		RPN();
+		RPN(const RPN &);
+		RPN	&operator=(const RPN &);
 		~RPN();
 
 		bool	solve(const char *str, int &res);
