@@ -48,6 +48,8 @@ class PmergeMe
 
 	public:
 		PmergeMe();
+		PmergeMe(const PmergeMe &);
+		PmergeMe	&operator=(const PmergeMe &);
 		~PmergeMe();
 		
 		void	parseInput(int argc, char **argv);
